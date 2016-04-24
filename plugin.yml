@@ -1,0 +1,110 @@
+name: uHome
+version: 0
+author: ks07
+authors: [spathizilla, tkelly]
+main: uk.co.ks07.uhome.uHome
+website: http://www.ultimateminecraft.net/
+softdepend: [Vault]
+commands:
+  home:
+    description: Access to the home commands.
+    usage: /<command> help [page] - Displays the uHome commands
+  sethome:
+    description: Alias for /home set
+    usage: /<command> - Sets the home position.
+    permission: uhome.own.set
+permissions:
+  uhome.all:
+    description: Gives access to all uHome commands.
+    children:
+      uhome.admin: true
+      uhome.own: true
+      uhome.bypass: true
+  uhome.own:
+    description: Gives access to all uHome commands
+    children:
+      uhome.own.set: true
+      uhome.own.warp: true
+      uhome.own.delete: true
+      uhome.own.list: true
+      uhome.own.listinvites: true
+      uhome.own.invite: true
+      uhome.own.uninvite: true
+      uhome.own.unlock: true
+  uhome.own.set:
+    description: Allows you to set homes.
+  uhome.own.warp:
+    description: Allows you to warp to your homes.
+  uhome.own.delete:
+    description: Allows you to delete your warps.
+  uhome.own.list:
+    description: Allows you to list your warps.
+  uhome.own.listinvites:
+    description: Allows you to list both sent and received invites.
+  uhome.own.invite:
+    description: Allows you to invite others to your homes.
+  uhome.own.uninvite:
+    description: Allows you to uninvite others from your homes.
+  uhome.own.unlock:
+    description: Allows you to toggle your home between locked and unlocked.
+  uhome.admin:
+    description: Gives access to all uHome admin commands
+    children:
+      uhome.admin.warp: true
+      uhome.admin.set: true
+      uhome.admin.delete: true
+      uhome.admin.list: true
+      uhome.admin.listinvites: true
+      uhome.admin.reload: true
+      uhome.admin.info: true
+      uhome.admin.send: true
+      uhome.admin.createsilent: true
+  uhome.admin.set:
+    description: Allows you to set other people's homes.
+  uhome.admin.warp:
+    description: Allows you to warp to other's homes.
+  uhome.admin.delete:
+    description: Allows you to delete other's warps.
+  uhome.admin.list:
+    description: Allows you to list other's warps.
+  uhome.admin.listinvites:
+    description: Allows you to list other's sent and received invites.
+  uhome.admin.reload:
+    description: Allows you to reload uHome.
+  uhome.admin.info:
+    description: Allows you to lookup a home's location.
+  uhome.admin.send:
+    description: Allows you to send a player to another home. You must also have uhome.admin.warp.
+  uhome.admin.createsilent:
+    description: Allows you to create 'silent' homes, using names beginning and ending with '**'.
+  uhome.bypass:
+    description: Allows you to bypass all restrictions.
+    children:
+      uhome.crossworld: true
+      uhome.bypass.bed: true
+      uhome.bypass.cooldown: true
+      uhome.bypass.warmup: true
+      uhome.bypass.limit: true
+      uhome.bypass.invlimit: true
+      uhome.bypass.economy: true
+  uhome.bypass.bed:
+    description: Allows you to bypass the bed restriction in the config.
+  uhome.bypass.cooldown:
+    description: Allows you to bypass the warp cooldown.
+  uhome.bypass.warmup:
+    description: Allows you to bypass the warp warm-up.
+    children:
+      uhome.bypass.warmup.damage: true
+      uhome.bypass.warmup.movement: true
+  uhome.bypass.warmup.damage:
+    description: Prevents damage from cancelling your warm-up.
+  uhome.bypass.warmup.movement:
+    description: Prevents movement from cancelling your warm-up.
+  uhome.bypass.limit:
+    description: Allows you to bypass all warp limits.
+  uhome.bypass.invlimit:
+    description: Allows you to bypass all invite limits.
+  uhome.bypass.economy:
+    description: Allows you to use all commands for free.
+  uhome.crossworld:
+    description: Allows the player to warp across worlds.

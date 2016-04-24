@@ -1,0 +1,41 @@
+# Please see http://dev.bukkit.org/server-mods/uhome/pages/configuration/1-5-x/ for help.
+settings:
+  respawnToHome: true
+  bedsCanSetHome: 0
+  bedsDuringDay: false
+  loadChunks: true
+  locale: 'en'
+  useColors: true
+  enableInvite: true
+  enableDefaultPerms: true
+  enableSethome: true
+  debugLog: false
+  recordLastAccess: false
+  enableUnlock: false
+  notifyOnSend: true
+  downloadLibs:
+    enable: true
+    mysqlLib: true
+    sqliteLib: true
+  mysql:
+    enable: false
+    connection: 'jdbc:mysql://localhost:3306/minecraft'
+    username: 'minecraft'
+    password: 'password'
+  respawnToHomeWorlds: []
+defaults:
+  homeLimit: 3
+  homeInvLimit: 1
+  warmup: 0
+  cooldown: 0
+timers:
+  timerByPerms: false
+  additionalTime: false
+  cooldownNotify: false
+  warmupNotify: true
+  abortOnDamage: 0
+  abortOnMovement: false
+economy:
+  enable: false
+  warpCost: 0
+  setCost: 0
